@@ -18,7 +18,7 @@ export async function addPais(req, res) {
         gini: gini ? { "0": parseFloat(gini) } : {}, // Convierte "gini" a un número flotante o lo deja vacío.
         borders, // Divide por comas y elimina espacios.
         timezones: timezones ? timezones.split(',').map(t => t.trim()) : [], // Similar a "borders".
-        creador: "Tomas Barros" // Agrega un valor estático para el creador.
+        creador: "Jorge Valeri" // Agrega un valor estático para el creador.
     };
     try {
         // Intentar guardar el nuevo país en la base de datos usando el modelo "Pais".
@@ -47,7 +47,6 @@ export async function cargarPaises(req, res) {
             const paisConCreador = {
                 ...pais,
                 creador: "Jorge Valeri" //Añadiendo la propiedad "creador"
-                // creador: "Tomas Barros" // Añadiendo la propiedad "creador"
             };
             try {
                 await Pais.create(paisConCreador); // Guarda el país en la base de datos
